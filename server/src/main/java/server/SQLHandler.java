@@ -18,9 +18,11 @@ public class SQLHandler {
             prepareAllStatements();
             return true;
         } catch (SQLException e) {
+            Server.logger.severe("Не удалось подключиться к БД");
             e.printStackTrace();
             return false;
         } catch (ClassNotFoundException e) {
+            Server.logger.severe("Не удалось подключиться к БД");
             e.printStackTrace();
             return false;
         }
