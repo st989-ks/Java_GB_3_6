@@ -5,11 +5,29 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.logging.*;
 
 public class Server {
+    Handler fileHandler = null;
+    static Logger logger = Logger.getLogger(Server.class.getName());
     private List<ClientHandler> clients;
     private AuthService authService;
     public Server() {
+
+        //==============//
+        try {
+            fileHandler = new FileHandler("log_%g.txt", 10 * 1024, 20, true);
+            fileHandler.setFormatter(new SimpleFormatter());
+            fileHandler.setLevel(Level.ALL);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        logger.addHandler(fileHandler);
+        logger.setLevel(Level.ALL);
+        logger.setUseParentHandlers(false);
+        //==============//
+
         clients = new CopyOnWriteArrayList<>();
 //        authService = new SimpleAuthService();
         //==============//
@@ -26,6 +44,7 @@ public class Server {
         try {
             server = new ServerSocket(PORT);
             System.out.println("Server started");
+            logger.severe("сервер запущен");
 
             while (true) {
                 socket = server.accept();
@@ -33,17 +52,20 @@ public class Server {
             }
 
         } catch (IOException e) {
+            logger.warning("произошла ошибка");
             e.printStackTrace();
         } finally {
             SQLHandler.disconnect();
             try {
                 socket.close();
             } catch (IOException e) {
+                logger.warning("произошла ошибка");
                 e.printStackTrace();
             }
             try {
                 server.close();
             } catch (IOException e) {
+                logger.warning("произошла ошибка");
                 e.printStackTrace();
             }
         }
@@ -74,6 +96,7 @@ public class Server {
             }
         }
         sender.sendMsg(String.format("Server: Client %s not found", receiver));
+        logger.fine("клиент прислал сообщение/команду");
     }
 
     public void subscribe(ClientHandler clientHandler) {

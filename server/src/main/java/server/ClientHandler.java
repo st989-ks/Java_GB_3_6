@@ -62,6 +62,7 @@ public class ClientHandler {
                                     sendMsg("/authok " + newNick);
                                     server.subscribe(this);
                                     socket.setSoTimeout(0);
+                                    Server.logger.fine("клиент подключился");
                                     //==============//
 //                                    sendMsg(SQLHandler.getMessageForNick(nickname));
                                     //==============//
@@ -146,6 +147,7 @@ public class ClientHandler {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        Server.logger.fine("клиент прислал сообщение/команду");
     }
 
     public String getNickname() {

@@ -1,0 +1,28 @@
+ноя 07, 2020 9:41:19 PM server.Server <init>
+SEVERE: сервер запущен
+ноя 07, 2020 9:41:38 PM server.ClientHandler sendMsg
+FINE: клиент прислал сообщение/команду
+ноя 07, 2020 9:41:38 PM server.ClientHandler sendMsg
+FINE: клиент прислал сообщение/команду
+ноя 07, 2020 9:41:38 PM server.ClientHandler lambda$new$0
+FINE: клиент подключился
+ноя 07, 2020 9:41:40 PM server.ClientHandler sendMsg
+FINE: клиент прислал сообщение/команду
+ноя 07, 2020 9:41:40 PM server.ClientHandler sendMsg
+FINE: клиент прислал сообщение/команду
+ноя 07, 2020 9:41:40 PM server.ClientHandler sendMsg
+FINE: клиент прислал сообщение/команду
+ноя 07, 2020 9:41:41 PM server.ClientHandler sendMsg
+FINE: клиент прислал сообщение/команду
+ноя 07, 2020 9:41:41 PM server.ClientHandler sendMsg
+FINE: клиент прислал сообщение/команду
+ноя 07, 2020 9:41:41 PM server.ClientHandler sendMsg
+FINE: клиент прислал сообщение/команду
+ноя 07, 2020 9:41:41 PM server.ClientHandler sendMsg
+FINE: клиент прислал сообщение/команду
+ноя 07, 2020 9:41:41 PM server.ClientHandler sendMsg
+FINE: клиент прислал сообщение/команду
+ноя 07, 2020 9:41:42 PM server.ClientHandler sendMsg
+FINE: клиент прислал сообщение/команду
+ноя 07, 2020 9:41:45 PM server.ClientHandler sendMsg
+FINE: клиент прислал сообщение/команду
